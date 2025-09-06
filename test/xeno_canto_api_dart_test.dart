@@ -1,7 +1,4 @@
 import 'package:dotenv/dotenv.dart';
-import 'package:xeno_canto_api_dart/src/models/enums.dart';
-import 'package:xeno_canto_api_dart/src/models/xeno_canto_error.dart';
-import 'package:xeno_canto_api_dart/src/models/xeno_canto_query.dart';
 import 'package:xeno_canto_api_dart/xeno_canto_api_dart.dart';
 import 'package:test/test.dart';
 
