@@ -7,10 +7,13 @@ import 'models/xeno_canto_query.dart';
 import 'models/xeno_canto_recording_response.dart';
 
 class XenoCantoApi {
-  final String baseUrl = 'https://xeno-canto.org/api/3/recordings';
+  static const String defaultBaseUrl =
+      'https://xeno-canto.org/api/3/recordings';
+
+  final String baseUrl;
   final String key;
 
-  XenoCantoApi({this.key = ''});
+  XenoCantoApi({this.baseUrl = defaultBaseUrl, this.key = ''});
 
   static XenoCantoError _decodeError(http.Response response) {
     try {
@@ -30,9 +33,14 @@ class XenoCantoApi {
     int page = 1,
     int perPage = 100,
   }) async {
-    final url = Uri.parse(
-      '$baseUrl?query=${query.asQueryString()}&key=$key&page=$page&per_page=$perPage',
-    );
+    var urlString =
+        '$baseUrl?query=${query.asQueryString()}&page=$page&per_page=$perPage';
+
+    if (key.isNotEmpty) {
+      urlString += '&key=$key';
+    }
+
+    final url = Uri.parse(urlString);
     final response = await http.get(url);
 
     if (response.statusCode == 200) {
