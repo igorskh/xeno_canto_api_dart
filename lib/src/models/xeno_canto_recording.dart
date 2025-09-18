@@ -34,7 +34,7 @@ class XenoCantoRecording {
   final String? lat;
 
   /// the longitude of the recording in decimal coordinates
-  final String? lng;
+  final String? lon;
 
   /// the altitude of the recording location in meters
   final String? alt;
@@ -125,7 +125,7 @@ class XenoCantoRecording {
     required this.cnt,
     required this.loc,
     this.lat,
-    this.lng,
+    this.lon,
     this.alt,
     required this.type,
     required this.sex,
@@ -166,7 +166,7 @@ class XenoCantoRecording {
       cnt: json['cnt'],
       loc: json['loc'],
       lat: json['lat'],
-      lng: json['lng'],
+      lon: json['lon'],
       alt: json['alt'],
       type: json['type'],
       sex: json['sex'],
