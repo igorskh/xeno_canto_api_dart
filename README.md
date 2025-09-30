@@ -19,3 +19,10 @@ In this example the API key will be loaded from .env file, e.g.
 ```text
 XENO_CANTO_API_KEY=[your_key]
 ```
+
+Using custom http client, e.g. for using with [mockito](https://github.com/dart-lang/mockito)
+```dart
+final client = http.Client()
+
+var apiClient = XenoCantoApi(httpClient: client, key: 'test');
+```
