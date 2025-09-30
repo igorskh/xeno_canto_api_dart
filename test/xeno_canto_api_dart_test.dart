@@ -3,7 +3,7 @@ import 'package:xeno_canto_api_dart/xeno_canto_api_dart.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('A group of tests', () {
+  group('Test fetching recordings', () {
     test('Get recordings', () async {
       var apiClient = XenoCantoApi();
 
