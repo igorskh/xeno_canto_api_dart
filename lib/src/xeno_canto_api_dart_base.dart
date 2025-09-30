@@ -12,8 +12,10 @@ class XenoCantoApi {
 
   final String baseUrl;
   final String key;
+  final http.Client httpClient;
 
-  XenoCantoApi({this.baseUrl = defaultBaseUrl, this.key = ''});
+  XenoCantoApi({this.baseUrl = defaultBaseUrl, this.key = '', http.Client? httpClient})
+      : httpClient = httpClient ?? http.Client();
 
   static XenoCantoError _decodeError(http.Response response) {
     try {
@@ -41,7 +43,7 @@ class XenoCantoApi {
     }
 
     final url = Uri.parse(urlString);
-    final response = await http.get(url);
+    final response = await httpClient.get(url);
 
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
