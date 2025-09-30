@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dotenv/dotenv.dart';
 import 'package:xeno_canto_api_dart/xeno_canto_api_dart.dart';
 import 'package:test/test.dart';
@@ -7,7 +9,12 @@ void main() {
     test('Get recordings', () async {
       var apiClient = XenoCantoApi();
 
-      var env = DotEnv(includePlatformEnvironment: true)..load();
+      var env = DotEnv(includePlatformEnvironment: true);
+
+      if (Platform.environment.containsKey('XENO_CANTO_API_KEY') == false) {
+        env.load();
+      }
+
       final query = XenoCantoQuery(fam: "Sylviidae", grp: XenoCantoGroup.birds);
 
       expect(
