@@ -1,8 +1,14 @@
-## 1.0.0
+# Changelog
 
-- Initial version.
+## 1.1.2
+
+- Make possibly missing fields nullable
 
 ## 1.1.0
 
 - Implement custom http.Client
 - Add test using mockito and JSON snapshot response
+
+## 1.0.0
+
+- Initial version.
