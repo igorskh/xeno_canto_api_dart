@@ -76,7 +76,7 @@ class XenoCantoRecording {
   final String length;
 
   /// the time of day that the recording was made
-  final String time;
+  final String? time;
 
   /// the date that the recording was made
   final String date;
@@ -85,7 +85,7 @@ class XenoCantoRecording {
   final String uploaded;
 
   /// an array with the identified background species in the recording
-  final List<String> also;
+  final List<String>? also;
 
   /// additional remarks by the recordist
   final String? rmk;
@@ -103,16 +103,16 @@ class XenoCantoRecording {
   final String? regnr;
 
   /// automatic (non-supervised) recording?
-  final String auto;
+  final String? auto;
 
   /// recording device used
-  final String dvc;
+  final String? dvc;
 
   /// microphone used
-  final String mic;
+  final String? mic;
 
   /// sample rate
-  final String smp;
+  final String? smp;
 
   XenoCantoRecording({
     required this.id,
@@ -140,18 +140,18 @@ class XenoCantoRecording {
     required this.q,
     required this.length,
     required this.date,
-    required this.time,
+    this.time,
     required this.uploaded,
-    required this.also,
-    required this.rmk,
+    this.also,
+    this.rmk,
     required this.animalSeen,
     required this.playbackUsed,
-    required this.temp,
-    required this.regnr,
-    required this.auto,
-    required this.dvc,
-    required this.mic,
-    required this.smp,
+    this.temp,
+    this.regnr,
+    this.auto,
+    this.dvc,
+    this.mic,
+    this.smp,
   });
 
   factory XenoCantoRecording.fromJson(Map<String, dynamic> json) {
