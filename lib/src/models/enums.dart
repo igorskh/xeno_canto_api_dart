@@ -1,4 +1,4 @@
-enum XenoCantoRecordingQuality { A, B, C, D, E }
+enum XenoCantoRecordingQuality { A, B, C, D, E, noScore }
 
 extension XenoCantoRecordingQualityExtension on XenoCantoRecordingQuality {
   String queryMoreThan() {
@@ -7,6 +7,13 @@ extension XenoCantoRecordingQualityExtension on XenoCantoRecordingQuality {
 
   String queryLessThan() {
     return "<$name";
+  }
+
+  static XenoCantoRecordingQuality fromName(String name) {
+    if (name == 'no score') {
+      return XenoCantoRecordingQuality.noScore;
+    }
+    return XenoCantoRecordingQuality.values.byName(name);
   }
 }
 
