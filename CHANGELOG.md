@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3
+
+- Update enum to handle "no score" quality recordings
+
 ## 1.1.2
 
 - Make possibly missing fields nullable

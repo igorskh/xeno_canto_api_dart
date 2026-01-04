@@ -178,7 +178,7 @@ class XenoCantoRecording {
       osci: XenoCantoRecordingOsci.fromJson(json['osci']),
       fileName: json['file-name'],
       lic: json['lic'],
-      q: XenoCantoRecordingQuality.values.byName(json['q']),
+      q: XenoCantoRecordingQualityExtension.fromName(json['q']),
       length: json['length'],
       date: json['date'],
       time: json['time'],
