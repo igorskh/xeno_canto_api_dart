@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.4
+- Implement JSON serialization for XenoCantoRecording model
+
 ## 1.1.3
 
 - Update enum to handle "no score" quality recordings

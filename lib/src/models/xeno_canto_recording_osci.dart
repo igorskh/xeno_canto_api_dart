@@ -16,4 +16,12 @@ class XenoCantoRecordingOsci {
       large: json['large'],
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'small': small,
+      'med': med,
+      'large': large,
+    };
+  }
 }

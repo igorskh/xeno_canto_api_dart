@@ -15,6 +15,23 @@ extension XenoCantoRecordingQualityExtension on XenoCantoRecordingQuality {
     }
     return XenoCantoRecordingQuality.values.byName(name);
   }
+
+  String get jsonValue {
+    switch (this) {
+      case XenoCantoRecordingQuality.A:
+        return 'A';
+      case XenoCantoRecordingQuality.B:
+        return 'B';
+      case XenoCantoRecordingQuality.C:
+        return 'C';
+      case XenoCantoRecordingQuality.D:
+        return 'D';
+      case XenoCantoRecordingQuality.E:
+        return 'E';
+      case XenoCantoRecordingQuality.noScore:
+        return 'no score';
+    }
+  }
 }
 
 enum XenoCantoBinaryOption { yes, no }
