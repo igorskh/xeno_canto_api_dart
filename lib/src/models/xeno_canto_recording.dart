@@ -195,4 +195,46 @@ class XenoCantoRecording {
       rmk: json['rmk'],
     );
   }
+
+  Map<String, dynamic> toJson(XenoCantoRecording object) {
+    return {
+      'id': object.id,
+      'gen': object.gen,
+      'sp': object.sp,
+      'ssp': object.ssp,
+      'grp': object.grp,
+      'en': object.en,
+      'rec': object.rec,
+      'cnt': object.cnt,
+      'loc': object.loc,
+      'lat': object.lat,
+      'lon': object.lon,
+      'alt': object.alt,
+      'type': object.type,
+      'sex': object.sex,
+      'stage': object.stage,  
+      'method': object.method,
+      'url': object.url,
+      'file': object.file,
+      'sono': object.sono.toJson(),
+      'osci': object.osci.toJson(),
+      'file-name': object.fileName,
+      'lic': object.lic,
+      'q': object.q.jsonValue, 
+      'length': object.length,
+      'date': object.date,
+      'time': object.time,
+      'uploaded': object.uploaded,
+      'also': object.also,
+      'animal-seen': object.animalSeen,
+      'playback-used': object.playbackUsed,
+      'temp': object.temp,
+      'regnr': object.regnr,
+      'auto': object.auto,
+      'dvc': object.dvc,
+      'mic': object.mic,
+      'smp': object.smp,
+      'rmk': object.rmk,
+    };
+  }
 }

@@ -19,4 +19,13 @@ class XenoCantoRecordingSono {
       full: json['full'],
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'small': small,
+      'med': med,
+      'large': large,
+      'full': full,
+    };
+  }
 }
