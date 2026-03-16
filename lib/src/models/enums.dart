@@ -52,7 +52,7 @@ enum XenoCantoRecordingMethod {
 }
 
 extension XenoCantoRecordingMethodExtension on XenoCantoRecordingMethod {
-  XenoCantoRecordingMethod fromName(String name) {
+  static XenoCantoRecordingMethod fromName(String name) {
     return XenoCantoRecordingMethod.values.firstWhere((e) => e.name == name);
   }
 
@@ -117,11 +117,17 @@ enum XenoCantoType {
   song,
   subsong,
   territorialCall,
+  unknown,
 }
 
 extension XenoCantoTypeExtension on XenoCantoType {
-  XenoCantoType fromName(String name) {
-    return XenoCantoType.values.firstWhere((e) => e.name == name);
+  static XenoCantoType fromName(String name) {
+    return XenoCantoType.values.firstWhere((e) => e.name == name, orElse: () => XenoCantoType.unknown);
+  }
+
+  static List<XenoCantoType> fromEnumString(String value, {String sep = ","}) {
+    final types = value.split(sep);
+    return types.map((t) => XenoCantoTypeExtension.fromName(t.trim())).toList();
   }
 
   String get name {
@@ -186,6 +192,8 @@ extension XenoCantoTypeExtension on XenoCantoType {
         return 'subsong';
       case XenoCantoType.territorialCall:
         return 'territorial call';
+      case XenoCantoType.unknown:
+        return 'unknown';
     }
   }
 }
@@ -200,7 +208,7 @@ enum XenoCantoGroup {
 }
 
 extension XenoCantoGroupExtension on XenoCantoGroup {
-  XenoCantoGroup fromName(String name) {
+  static XenoCantoGroup fromName(String name) {
     return XenoCantoGroup.values.firstWhere((e) => e.name == name);
   }
 
