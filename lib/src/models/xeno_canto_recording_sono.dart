@@ -1,14 +1,14 @@
 class XenoCantoRecordingSono {
-  final String small;
-  final String med;
-  final String large;
-  final String full;
+  final String? small;
+  final String? med;
+  final String? large;
+  final String? full;
 
   XenoCantoRecordingSono({
-    required this.small,
-    required this.med,
-    required this.large,
-    required this.full,
+    this.small,
+    this.med,
+    this.large,
+    this.full,
   });
 
   factory XenoCantoRecordingSono.fromJson(Map<String, dynamic> json) {
