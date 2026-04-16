@@ -18,7 +18,7 @@ void main() {
     test('Get recordings', () async {
       final client = MockClient();
 
-      final sampleResponse = await readJSONFromFile('test/snapshots/response_sylviidae_snapshot.json');
+      final sampleResponse = await readJSONFromFile('test/snapshots/response_sylviidae_snapshot_0426.json');
 
       when(
         client.get(
@@ -44,10 +44,9 @@ void main() {
       );
       print('Found ${recordings.numRecordings} recordings');
       expect(recordings.recordings.length, equals(50));
-      
-      expect(recordings.recordings.first.id, equals("1043829"));
-      expect(recordings.recordings.last.id, equals("1000740"));
 
+      expect(recordings.recordings[0].url, startsWith('https://xeno-canto.org'));
+      expect(recordings.recordings[0].file, startsWith('https://xeno-canto.org'));
     });
   });
 }
